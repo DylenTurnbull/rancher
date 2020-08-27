@@ -1,0 +1,29 @@
+cluster_name: rke-cluster
+
+nodes:
+  - address: 0.0.0.0
+    internal_address: 0.0.0.0 # Optional if the Machines use a different IP from the Public IP
+    user: ubuntu                       # username. you must have ssh access to the Server
+    role: [controlplane,worker,etcd]
+  - address: 0.0.0.0
+    internal_address: 0.0.0.0 # Optional if the Machines use a different IP from the Public IP
+    user: ubuntu                       # username. you must have ssh access to the Server
+    role: [worker]
+  - address: 0.0.0.0
+    internal_address: 0.0.0.0 # Optional if the Machines use a different IP from the Public IP
+    user: ubuntu                       # username. you must have ssh access to the Server
+    role: [worker]
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+ingress:
+  provider: none
+
+# ingress:
+#   provider: nginx
+#   options:
+#     use-forwarded-headers: "true"
