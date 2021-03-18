@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+*.rkestate
 
 # Test binary, built with `go test -c`
 *.test
@@ -15,4 +16,4 @@
 # vendor/
 
 # Rancher local files
-cluster-rke.yaml
+rke-cluster.yaml

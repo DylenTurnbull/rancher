@@ -65,6 +65,8 @@ sudo docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 ran
 ```
 For further details please see the information at this [link](https://rancher.com/docs/rancher/v2.x/en/quick-start-guide/deployment/quickstart-manual-setup/)
 
+Once the Rancher container is up and running and the browser configuration is complete bookmark the Rancher site for later use. This has already been booked marked in the UDF pattern.
+
 <br>
 
 ## Install Rancher Kubernetes Engine
@@ -90,7 +92,7 @@ When finished editing the "rke-cluster.yaml" run the following command to bring 
 rke up --config=./rke-luster.yaml
 ```
 
-After the install completes copy over the cofig
+After the install completes copy over the cofig this will allow you to use the local copy of kubectl to manipulate the cluster.
 
 ```
 cp kube_config_cluster.yaml /home/ubuntu/.kube/config
@@ -98,35 +100,38 @@ cp kube_config_cluster.yaml /home/ubuntu/.kube/config
 
 ## Add Cluster to Rancher
 
-Once the RKE is up and running open up a browser and go to the following link [Rancher](http://rancher.demo.example) set the password then set it to manage multiple cluster deselect the stats collection tick box and submit then accept the next dialog that sets the url and your done.
+Once the RKE is up and running open up a browser and go to the Rancher managment link booked marked in a previous step. You may need to do the following if it is not already complete. Set the password then set it to manage multiple clusters, deselect the stats collection tick box and submit then accept the next dialog that sets the url and your done.
 
-
-While logged into the Rancher Management server click the rancher logo to ensure your at the top level and then locate and click the add cluster button then select the other cluster option name your cluster "rke-cluster" then click create
+While logged into the Rancher Management server click the rancher logo to ensure your at the top level and then locate and click the add cluster button then select the other cluster option name the cluster "rke-cluster" then click create.
 
 From the following page click the copy button for the first code snippet provided it should look like this.
 
 ```
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole cluster-admin --user [USER_ACCOUNT]
 ```
-Paste the above command into the cli then locate the kube_config_cluster.yaml and find the user account under context it should loook like this.
+
+Paste the above command into the VSCode cli then locate the kube_config_cluster.yaml in the Rancher VSCode repo and find the user account under context it should look like this.
 
 ```
 user: "kube-admin-rke-cluster"
 ```
-Replace [USER_ACCOUNT] in the pasted command line with the text between the quotes in this example it look like the example below then hit enter. This will create the required cluster role binding for adding the RKE cluster to the Rancher Management server
+
+Replace [USER_ACCOUNT] in the pasted command line with the text between the quotes in this example it looks like the example below then hit enter. This will create the required cluster role binding for adding the RKE cluster to the Rancher Management server.
 
 ```
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole cluster-admin --user kube-admin-rke-cluster
 ```
-Next go back the the browser and click the copy button for the last cli option we will not be using the middle option as we are running insecurly for this example. it should look similar to this
+
+Next go back the the browser and click the copy button for the last cli option we will not be using the middle option as we are runnig with self signed certs for this example. it should look similar to this
 
 ```
 curl --insecure -sfL https://rancher.demo.example/v3/import/m672vckj6zhfs725xwnt9ln5nk66s57q8fvlhwpnwscs75xjtvhddz.yaml | kubectl apply -f -
 ```
-This will add the RKE cluster to the Rancher Management if you wait it will automatically go back to the Rancher main page and you should now see the RKE cluster in the list.
+
+This will add the RKE cluster to the Rancher Management. Continue to wait, it will automatically go back to the Rancher main page, you should now see the RKE cluster in the list.
 
 ## Installing NGINX Plus into the RKE cluster
-This section will be devoted to 
+For this demo we will be installing NGINX KIC into the 
 
 
 NGINX install info
