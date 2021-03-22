@@ -140,7 +140,6 @@ utility.bddemo.udf:5000/nginx-plus-ingress
 ```
 ## NGINX Demo App
 
-
 ## Bonus Materials
 
 ### Configure NFS
