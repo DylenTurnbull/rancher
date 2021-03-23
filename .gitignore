@@ -16,4 +16,7 @@
 # vendor/
 
 # Rancher local files
+
 rke-cluster.yaml
+kube_config_rke-cluster.yaml
+
