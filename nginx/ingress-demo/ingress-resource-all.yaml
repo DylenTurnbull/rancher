@@ -3,10 +3,10 @@ kind: Ingress
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-  name: ingress-resource-3
+  name: ingress-resource-all
 spec:
   rules:
-  - host: nginx.example.com
+  - host: nginx.bddemo.udf
     http:
       paths:
       - path: /
