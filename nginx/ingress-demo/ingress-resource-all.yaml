@@ -1,10 +1,11 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
+  namespace: default
   name: ingress-resource-all
 spec:
   rules:
-  - host: nginx.bddemo.udf
+  - host: app.terraebb.com
     http:
       paths:
       - path: /

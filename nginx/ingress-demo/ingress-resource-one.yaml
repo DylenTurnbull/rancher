@@ -1,16 +1,15 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
+  namespace: default
   name: ingress-resource-one
 spec:
   rules:
-  - host: nginx.bddemo.udf
+  - host: app.terraebb.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
-          service:
-            name: nginx-deploy-main
-            port: 
-              number: 80
+          serviceName: nginx-deploy-main
+          servicePort: 80

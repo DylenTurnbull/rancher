@@ -1,8 +1,13 @@
 # Install Rancher after adding the node IP addresses (10.1.1.6, 10.1.1.7, 10.1.1.8)
 # Command: rke up --config=./rke-cluster.yaml
+
 # copy the config file to the .kube folder 
 # Command: cp kube_config_rke-cluster.yaml /home/ubuntu/.kube/config
+
 # UDF Docker Registry: utility.bddemo.udf:5000/nginx-plus-ingress
+
+# Remove the rancher cluster
+# Command: rke remove --config=./rke-cluster.yaml
 
 cluster_name: rke-cluster
 
