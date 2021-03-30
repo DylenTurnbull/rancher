@@ -5,6 +5,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx # use only with k8s version >= 1.18.0 
   rules:
   - host: app.terraebb.com
     http:

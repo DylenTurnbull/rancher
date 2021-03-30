@@ -1,22 +1,21 @@
 # Miscellaneous
-**information for additional cluster functionality**
+## Set Up and Clean Up
 
-## Docker Commands
-
-
+- Set Up
+    ```
+    ssh-copy-id dturnbull@192.168.1.X
+    ```
 **Delete all Docker containers**
 
-Must be run first
+- Clean Up
+  
+    Must be run first
 
-```
-docker rm -f $(docker ps -a -q)
-```
+    ```
+    docker rm -f $(docker ps -a -q)
+    ```
 
-Delete every Docker image
-```
-docker rmi -f $(docker images -q)
-```
-
-```
-ssh-copy-id dturnbull@192.168.1.X
-```
+    Delete every Docker image
+    ```
+    docker rmi -f $(docker images -q)
+    ```
