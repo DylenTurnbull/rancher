@@ -11,10 +11,19 @@ kubectl get all
 
 ## Deploy the basic NGINX examples(s)
 
-**One Example**
+**Example One**
 
 ```
 kubectl create -f nginx-deploy-main.yaml
+```
+## K8s site demo 
+
+```
+kubectl apply -f run-my-nginx.yaml
+```
+
+```
+kubectl expose deployment/my-nginx
 ```
 
 **All examples**
@@ -46,4 +55,10 @@ kubectl get all
 ### Create and ingress resource for the Basic app
 ```
 kubectl create -f ingress-resource.yaml
+```
+
+## Temp
+
+```
+helm install nginx-ingress nginx-stable/nginx-ingress --set prometheus.create=true --set controller.kind=daemonset
 ```
