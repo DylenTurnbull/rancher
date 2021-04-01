@@ -3,6 +3,11 @@
 
 <br>
 
+
+## NOTE: This readme is very out of date updates are coming soon...
+
+<br>
+
 The following guide will show how to start with a minimal set of pre-requisites in your environment and build out a solution platform using Rancher Kubernetes for the Environment. NGINX Kubernetes Ingress Controller for ingres and the Rancher for Managed Kubernetes Cluster Operations.
 
 ## Dev/ Control System

@@ -1,64 +1,34 @@
 # NGINX Plus Ingress Demo
 
-Follow the directions below to deploy a set of basic demo examples. youc an opbserve teh example sites at any time with the command below.
+Follow the directions below to deploy a set of basic demo example.
 
 **Observe Deployment**
 <br>
 Ensure you are in the correct namespace
 ```
-kubectl get all
+watch kubectl get all
+```
+or
+```
+watch kubectl get pods --all-namespaces
 ```
 
-## Deploy the basic NGINX examples(s)
+## Deploy the basic demo
 
-**Example One**
+**Demo**
 
-```
-kubectl create -f nginx-deploy-main.yaml
-```
-## K8s site demo 
+
+Create the deployment below
 
 ```
-kubectl apply -f run-my-nginx.yaml
+kubectl apply -f deployment.yaml
 ```
 
 ```
-kubectl expose deployment/my-nginx
+kubectl apply -f service.yaml
 ```
-
-**All examples**
+Update this yaml file with your demo app DNS address.
 ```
-kubectl create -f nginx-deploy-main.yaml -f nginx-deploy-blue.yaml -f nginx-deploy-green.yaml
+kubectl apply -f ingress.yaml
 ```
-
-## Expose the basic example(s) as a service on port 80
-
-**One Example**
-
-```
-kubectl expose deploy nginx-deploy-main --port 80
-```
-
-**All examples**
-
-```
-kubectl expose deploy nginx-deploy-main --port 80
-kubectl expose deploy nginx-deploy-blue --port 80
-kubectl expose deploy nginx-deploy-green --port 80
-```
-**Observe Service**
-
-```
-kubectl get all
-```
-
-### Create and ingress resource for the Basic app
-```
-kubectl create -f ingress-resource.yaml
-```
-
-## Temp
-
-```
-helm install nginx-ingress nginx-stable/nginx-ingress --set prometheus.create=true --set controller.kind=daemonset
-```
+You view the site at the link specified in the ingress.yaml
