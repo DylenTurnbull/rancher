@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx # use only with k8s version >= 1.18.0 
   rules:
-  - host: app.yourdomain.com
+  - host: app.bddemo.udf
     http:
       paths:
       - path: /
