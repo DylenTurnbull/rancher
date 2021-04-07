@@ -1,3 +1,8 @@
+# -----------------
+# UDF demo commands
+# -----------------
+
+# Copy and rename cluster.yaml to rke-cluster.yaml
 # Install Rancher after adding the node IP addresses (10.1.1.6, 10.1.1.7, 10.1.1.8)
 # Command: rke up --config=./rke-cluster.yaml
 
@@ -5,6 +10,7 @@
 # Command: cp kube_config_rke-cluster.yaml /home/ubuntu/.kube/config
 
 # UDF Docker Registry: utility.bddemo.udf:5000/nginx-plus-ingress
+# TAG: 1.9.1
 
 # Remove the rancher cluster
 # Command: rke remove --config=./rke-cluster.yaml

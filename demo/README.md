@@ -6,11 +6,11 @@ Follow the directions below to deploy a set of basic demo example.
 <br>
 Ensure you are in the correct namespace
 ```
-watch kubectl get all
+watch kubectl get all -n default
 ```
 or
 ```
-watch kubectl get pods --all-namespaces
+watch kubectl get pods -n default
 ```
 
 ## Deploy the basic demo

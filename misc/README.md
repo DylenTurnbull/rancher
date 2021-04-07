@@ -6,7 +6,7 @@ Below is a set of information that is notworthy but not needed for the main path
 
 - Set Up
     ```
-    ssh-copy-id dturnbull@192.168.1.X
+    ssh-copy-id ubuntu@192.168.1.X
     ```
 **Delete all Docker containers**
 
