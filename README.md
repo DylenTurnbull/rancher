@@ -107,7 +107,7 @@ cp kube_config_cluster.yaml /home/ubuntu/.kube/config
 
 ## Add Cluster to Rancher
 
-Once the RKE is up and running open up a browser and go to the Rancher managment link booked marked in a previous step. You may need to do the following if it is not already complete. Set the password then set it to manage multiple clusters, deselect the stats collection tick box and submit then accept the next dialog that sets the url and your done.
+Once the RKE is up and running open up a browser and go to the Rancher management link booked marked in a previous step. You may need to do the following if it is not already complete. Set the password then set it to manage multiple clusters, deselect the stats collection tick box and submit then accept the next dialog that sets the url and your done.
 
 While logged into the Rancher Management server click the rancher logo to ensure your at the top level and then locate and click the add cluster button then select the other cluster option name the cluster "rke-cluster" then click create.
 
